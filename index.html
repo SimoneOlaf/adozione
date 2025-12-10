@@ -1,218 +1,258 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="it">
-  <head>
-    <meta charset="UTF-8" />
-    <title>La nostra adozione a distanza</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <style>
-      :root {
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        color-scheme: light;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <title>La nostra adozione a distanza</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color-scheme: light;
+    }
 
-      body {
-        margin: 0;
-        padding: 0;
-        background: #f7f7fb;
-        color: #222;
-        line-height: 1.6;
-     }
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f7f7fb;
+      color: #222;
+      line-height: 1.6;
+    }
 
-      .page {
-        max-width: 960px;
-        margin: 0 auto;
-        padding: 2rem 1.5rem 3rem;
-      }
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 3rem;
+    }
 
-      header {
-        text-align: center;
-        margin-bottom: 2.5rem;
-      }
+    header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
 
+    header h1 {
+      margin: 0 0 0.5rem;
+      font-size: 2rem;
+    }
+
+    /* AREA LOGO SOTTO IL TITOLO */
+    .logo-area {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      margin: 0.5rem 0 1rem;
+      padding: 0.5rem 0.75rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.8);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    }
+
+    .logo-area img {
+      height: 48px;
+      width: auto;
+      display: block;
+    }
+
+    .logo-text {
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    header p.subtitle {
+      margin: 0.2rem 0;
+      font-size: 1rem;
+      color: #666;
+    }
+
+    .intro {
+      background: #ffffff;
+      padding: 1.5rem 1.75rem;
+      border-radius: 1.2rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+      margin-bottom: 2rem;
+    }
+
+    .intro p {
+      margin: 0.4rem 0;
+    }
+
+    .children {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 1.2rem;
+      padding: 1.25rem 1.25rem 1.5rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    .card small {
+      display: block;
+      color: #888;
+      margin-bottom: 0.75rem;
+    }
+
+    .photo-wrapper {
+      border-radius: 1rem;
+      overflow: hidden;
+      margin-bottom: 0.75rem;
+      max-height: 260px;
+    }
+
+    .photo-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card p {
+      margin: 0.4rem 0;
+      font-size: 0.95rem;
+    }
+
+    /* SEZIONE PAGELLE (usa le stesse griglie dei disegni) */
+    .grades {
+      margin-bottom: 2rem;
+    }
+
+    .grades h2 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .drawing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1rem;
+    }
+
+    .drawing-card {
+      background: #ffffff;
+      border-radius: 1.2rem;
+      padding: 1rem 1rem 1.2rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+    }
+
+    .drawing-card h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1rem;
+    }
+
+    figure {
+      margin: 0 0 0.5rem;
+    }
+
+    figure img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 0.9rem;
+    }
+
+    figure figcaption {
+      font-size: 0.8rem;
+      color: #777;
+      margin-top: 0.25rem;
+    }
+
+    /* SEZIONE PDF DISEGNI */
+    .pdf-drawings {
+      margin-top: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .pdf-drawings h2 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .pdf-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1rem;
+    }
+
+    .pdf-item {
+      background: #ffffff;
+      border-radius: 1.2rem;
+      padding: 1rem 1.2rem 1.2rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+    }
+
+    .pdf-item h3 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+
+    .pdf-note {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 0.8rem;
+    }
+
+    .pdf-item a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .pdf-item a:hover {
+      text-decoration: underline;
+    }
+
+    .pdf-icon {
+      font-size: 1.4rem;
+    }
+
+    .pdf-title {
+      font-weight: 500;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 2.5rem;
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    @media (min-width: 768px) {
       header h1 {
-        margin: 0 0 0.5rem;
-        font-size: 2rem;
+        font-size: 2.3rem;
       }
-
-      header p.subtitle {
-        margin: 0.2rem 0;
-        font-size: 1rem;
-        color: #666;
-      }
-
       .intro {
-        background: #ffffff;
-        padding: 1.5rem 1.75rem;
-        border-radius: 1.2rem;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.04);
-        margin-bottom: 2rem;
-      }
-
-      .intro p {
-        margin: 0.4rem 0;
-      }
-
-      .children {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 1.5rem;
-        margin-bottom: 2.5rem;
-      }
-
-      .card {
-        background: #ffffff;
-        border-radius: 1.2rem;
-        padding: 1.25rem 1.25rem 1.5rem;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.04);
-     }
-
-      .card h2 {
-        margin-top: 0;
-        margin-bottom: 0.5rem;
-        font-size: 1.2rem;
-     }
-
-      .card small {
-        display: block;
-        color: #888;
-        margin-bottom: 0.75rem;
-     }
-
-      .photo-wrapper {
-        border-radius: 1rem;
-        overflow: hidden;
-        margin-bottom: 0.75rem;
-        max-height: 260px;
-     }
-
-      .photo-wrapper img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-      }
-
-      .card p {
-        margin: 0.4rem 0;
-        font-size: 0.95rem;
-      }
-
-      .drawings {
-        margin-bottom: 1rem;
-     }
-
-      .drawings h2 {
-        font-size: 1.3rem;
-        margin-bottom: 0.5rem;
-     }
-
-      .drawing-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 1.25rem;
-     }
-
-      .drawing-card {
-        background: #ffffff;
-        border-radius: 1.2rem;
-        padding: 1rem 1rem 1.2rem;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.04);
-      }
-
-      .drawing-card h3 {
-        margin: 0 0 0.5rem;
         font-size: 1rem;
-     }
-
-      figure {
-        margin: 0 0 0.5rem;
-     }
-
-      figure img {
-        width: 100%;
-        height: auto;
-        display: block;
-        border-radius: 0.9rem;
       }
-
-      figure figcaption {
-        font-size: 0.8rem;
-        color: #777;
-        margin-top: 0.25rem;
-      }
-
-      footer {
-        text-align: center;
-        margin-top: 2.5rem;
-        font-size: 0.9rem;
-        color: #777;
-     }
-
-      @media (min-width: 768px) {
-        header h1 {
-          font-size: 2.3rem;
-        }
-        .intro {
-          font-size: 1rem;
-        }
-      }
-
-      .pdf-drawings {
-  margin-top: 2rem;
-  margin-bottom: 1.5rem;
-}
-
-.pdf-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.25rem;
-  margin-top: 1rem;
-}
-
-.pdf-item {
-  background: #ffffff;
-  border-radius: 1.2rem;
-  padding: 1rem 1.2rem 1.2rem;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.04);
-}
-
-.pdf-item h3 {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
-}
-
-.pdf-note {
-  font-size: 0.9rem;
-  color: #555;
-  margin-bottom: 0.8rem;
-}
-
-.pdf-item a {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  text-decoration: none;
-  font-size: 0.9rem;
-}
-
-.pdf-item a:hover {
-  text-decoration: underline;
-}
-
-.pdf-icon {
-  font-size: 1.4rem;
-}
-
-.pdf-title {
-  font-weight: 500;
-}
-    </style>
-  </head>  
-  <body>
+    }
+  </style>
+</head>
+<body>
   <div class="page">
     <header>
       <h1>La nostra adozione a distanza</h1>
+
+      <!-- AREA LOGO: sostituisci l'immagine o il testo come preferisci -->
+      <div class="logo-area">
+        <!-- Se hai un logo, metti il percorso qui -->
+        <img src="img/logo.png" alt="Logo dell'associazione o della famiglia" />
+        <span class="logo-text">Qui puoi inserire il logo della famiglia o dell'associazione</span>
+      </div>
+
       <p class="subtitle">Una piccola scelta che per loro significa un grande futuro.</p>
       <p class="subtitle">Qui vogliamo raccontare l’inizio di questo cammino insieme.</p>
     </header>
@@ -229,14 +269,16 @@
         fermare nel tempo l’emozione di questo incontro speciale.
       </p>
       <p>
-        Ogni foto, ogni disegno che ci mandano è un piccolo ponte tra la loro vita e la nostra.
+        Ogni foto, ogni pagella, ogni disegno che ci mandano è un piccolo ponte
+        tra la loro vita e la nostra.
       </p>
     </section>
 
     <section class="children" aria-label="I bambini che sosteniamo">
       <!-- CARTA BAMBINO -->
       <article class="card">
-        <h2>Eric Sawadogo</h2>
+        <h2>Il bambino</h2>
+        <small>(qui puoi inserire il suo nome, se vuoi)</small>
 
         <div class="photo-wrapper">
           <!-- Sostituisci il valore di src con il percorso reale della foto del bambino -->
@@ -256,7 +298,8 @@
 
       <!-- CARTA BAMBINA -->
       <article class="card">
-        <h2>Neimatou Ilboudo</h2>
+        <h2>La bambina</h2>
+        <small>(qui puoi inserire il suo nome, se vuoi)</small>
 
         <div class="photo-wrapper">
           <!-- Sostituisci il valore di src con il percorso reale della foto della bambina -->
@@ -275,86 +318,88 @@
       </article>
     </section>
 
+    <!-- SEZIONE PAGELLE SCOLASTICHE -->
     <section class="grades" aria-label="Le loro pagelle scolastiche">
-  <h2>Le loro pagelle scolastiche</h2>
-  <p>
-    Una delle gioie più grandi dell’adozione a distanza è vedere i loro progressi
-    a scuola: ogni voto rappresenta un passo in più verso un futuro migliore.
-    Qui raccogliamo le loro pagelle, che ci riempiono di orgoglio.
-  </p>
-
-  <div class="drawing-grid">
-    <!-- PAGELLA BAMBINO -->
-    <article class="drawing-card">
-      <h3>Pagella di Eric</h3>
-      <figure>
-        <!-- Sostituisci il valore di src con il percorso reale della pagella del bambino -->
-        <img src="img/Pagella_Eric.jpeg" alt="Pagella scolastica del bambino" />
-        <figcaption>
-          I risultati ottenuti a scuola mostrano il suo impegno e la sua curiosità.
-        </figcaption>
-      </figure>
+      <h2>Le loro pagelle scolastiche</h2>
       <p>
-        Ama imparare cose nuove e si impegna per ottenere sempre il meglio.
-        La pagella testimonia i suoi progressi e la passione che ha per lo studio.
+        Una delle gioie più grandi dell’adozione a distanza è vedere i loro progressi
+        a scuola: ogni voto rappresenta un passo in più verso un futuro migliore.
+        Qui raccogliamo le loro pagelle, che ci riempiono di orgoglio.
       </p>
-    </article>
 
-    <!-- PAGELLA BAMBINA -->
-    <article class="drawing-card">
-      <h3>Pagella di Neimatou</h3>
-      <figure>
-        <!-- Sostituisci il valore di src con il percorso reale della pagella della bambina -->
-        <img src="img/Pagella_Neimatou.jpeg" alt="Pagella scolastica della bambina" />
-        <figcaption>
-          Ogni voto è il risultato della sua tenacia e della voglia di crescere.
-        </figcaption>
-      </figure>
+      <div class="drawing-grid">
+        <!-- PAGELLA BAMBINO -->
+        <article class="drawing-card">
+          <h3>Pagella del bambino</h3>
+          <figure>
+            <!-- Sostituisci il valore di src con il percorso reale della pagella del bambino -->
+            <img src="img/Pagella_Eric.jpeg" alt="Pagella scolastica del bambino" />
+            <figcaption>
+              I risultati ottenuti a scuola mostrano il suo impegno e la sua curiosità.
+            </figcaption>
+          </figure>
+          <p>
+            Ama imparare cose nuove e si impegna per ottenere sempre il meglio.
+            La pagella testimonia i suoi progressi e la passione che ha per lo studio.
+          </p>
+        </article>
+
+        <!-- PAGELLA BAMBINA -->
+        <article class="drawing-card">
+          <h3>Pagella della bambina</h3>
+          <figure>
+            <!-- Sostituisci il valore di src con il percorso reale della pagella della bambina -->
+            <img src="img/Pagella_Neimatou.jpeg" alt="Pagella scolastica della bambina" />
+            <figcaption>
+              Ogni voto è il risultato della sua tenacia e della voglia di crescere.
+            </figcaption>
+          </figure>
+          <p>
+            Con grande determinazione si applica ogni giorno per raggiungere i suoi
+            obiettivi scolastici. La pagella è la prova dei suoi progressi.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- SEZIONE DISEGNI IN PDF -->
+    <section class="pdf-drawings" aria-label="Disegni in formato PDF">
+      <h2>I disegni in formato PDF</h2>
       <p>
-        Con grande determinazione si applica ogni giorno per raggiungere i suoi
-        obiettivi scolastici. La pagella è la prova dei suoi progressi.
+        Oltre alle foto e alle pagelle, abbiamo ricevuto i loro disegni in formato PDF.
+        Qui li raccogliamo per poterli aprire e riguardare tutte le volte che vogliamo.
       </p>
-    </article>
-  </div>
-</section>
 
-<section class="pdf-drawings" aria-label="Disegni in formato PDF">
-  <h2>I disegni e le passioni dei nostri bimbi</h2>
-  <p>
-    Oltre alle foto, abbiamo ricevuto i loro disegni e una presentazione che ci racconta un pò di loro.
-    Qui li raccogliamo per poterli aprire e riguardare tutte le volte che vogliamo.
-  </p>
+      <div class="pdf-list">
+        <!-- PDF DISEGNI BAMBINO -->
+        <article class="pdf-item">
+          <h3>Disegni del bambino (PDF)</h3>
+          <p class="pdf-note">
+            Una raccolta dei suoi disegni: scene di vita quotidiana, giochi con gli amici
+            e tutto ciò che lo rende felice.
+          </p>
+          <!-- Sostituisci href con il percorso reale del PDF -->
+          <a href="pdf/Disegno_Eric.pdf" target="_blank" rel="noopener">
+            <span class="pdf-icon">📄</span>
+            <span class="pdf-title">Apri il PDF dei disegni del bambino</span>
+          </a>
+        </article>
 
-  <div class="pdf-list">
-    <!-- PDF DISEGNI BAMBINO -->
-    <article class="pdf-item">
-      <h3>Disegno di Eric</h3>
-      <p class="pdf-note">
-        Una raccolta dei suoi disegni: scene di vita quotidiana, giochi con gli amici
-        e tutto ciò che lo rende felice.
-      </p>
-      <!-- Sostituisci href con il percorso reale del PDF -->
-      <a href="pdf/Disegno_Eric.pdf" target="_blank" rel="noopener">
-        <span class="pdf-icon">📄</span>
-        <span class="pdf-title">Apri il PDF dei disegni di Eric</span>
-      </a>
-    </article>
-
-    <!-- PDF DISEGNI BAMBINA -->
-    <article class="pdf-item">
-      <h3>Disegno di Neimatou</h3>
-      <p class="pdf-note">
-        Tanti colori, cuori e sogni per il futuro: i suoi disegni raccontano il suo mondo
-        e la sua fantasia.
-      </p>
-      <!-- Sostituisci href con il percorso reale del PDF -->
-      <a href="pdf/Disegno_Neimatou.pdf" target="_blank" rel="noopener">
-        <span class="pdf-icon">📄</span>
-        <span class="pdf-title">Apri il PDF dei disegni di Neimatou</span>
-      </a>
-    </article>
-  </div>
-</section>
+        <!-- PDF DISEGNI BAMBINA -->
+        <article class="pdf-item">
+          <h3>Disegni della bambina (PDF)</h3>
+          <p class="pdf-note">
+            Tanti colori, cuori e sogni per il futuro: i suoi disegni raccontano il suo mondo
+            e la sua fantasia.
+          </p>
+          <!-- Sostituisci href con il percorso reale del PDF -->
+          <a href="pdf/Disegno_Neimatou.pdf" target="_blank" rel="noopener">
+            <span class="pdf-icon">📄</span>
+            <span class="pdf-title">Apri il PDF dei disegni della bambina</span>
+          </a>
+        </article>
+      </div>
+    </section>
 
     <footer>
       Questa adozione a distanza è un impegno d’amore e responsabilità.  
