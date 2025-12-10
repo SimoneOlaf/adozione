@@ -4,6 +4,10 @@
   <meta charset="UTF-8" />
   <title>La nostra adozione a distanza</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Font elegante per i nomi -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+
   <style>
     :root {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -30,27 +34,21 @@
     }
 
     header h1 {
-      margin: 0 0 0.5rem;
+      margin: 0 0 0.75rem;
       font-size: 2rem;
     }
 
-    /* AREA LOGO SOTTO IL TITOLO */
-    .logo-area {
-      padding: 1rem 1.5rem;
-      margin-bottom: 1.5rem;
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 1rem;
+    .logo-wrapper {
+      margin: 0.5rem auto 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
-    .logo-area img {
-      height: 120px;     /* LOGO PIÙ GRANDE */
-      width: auto;
-    display: block;
-    }
-
-    .logo-text {
-      font-size: 0.9rem;
-      color: #555;
+    .logo-wrapper img.logo {
+      max-width: 260px;   /* logo bello grande */
+      height: auto;
+      display: block;
     }
 
     header p.subtitle {
@@ -79,22 +77,59 @@
     }
 
     .card {
-      background: #ffffff;
       border-radius: 1.2rem;
       padding: 1.25rem 1.25rem 1.5rem;
       box-shadow: 0 8px 20px rgba(0,0,0,0.04);
     }
 
-    .card h2 {
-      margin-top: 0;
-      margin-bottom: 0.5rem;
-      font-size: 1.2rem;
+    /* Colori diversi per le due card */
+    .card--boy {
+      background: #eaf3ff;   /* azzurrino molto chiaro */
     }
 
-    .card small {
-      display: block;
-      color: #888;
-      margin-bottom: 0.75rem;
+    .card--girl {
+      background: #ffeef6;   /* rosato molto chiaro */
+    }
+
+    .card h2 {
+      margin-top: 0;
+      margin-bottom: 0.35rem;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #555;
+    }
+
+    /* Badge con nome + età */
+    .child-name-badge {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 0.55rem;
+      margin-bottom: 0.9rem;
+      padding: 0.45rem 1.1rem;
+      border-radius: 999px;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    }
+
+    .child-name-badge--boy {
+      border-color: rgba(80, 120, 200, 0.35);
+    }
+
+    .child-name-badge--girl {
+      border-color: rgba(200, 80, 140, 0.35);
+    }
+
+    .child-name {
+      font-family: "Playfair Display", "Times New Roman", serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+    }
+
+    .child-age {
+      font-size: 0.9rem;
+      color: #666;
     }
 
     .photo-wrapper {
@@ -116,9 +151,9 @@
       font-size: 0.95rem;
     }
 
-    /* SEZIONE PAGELLE (usa le stesse griglie dei disegni) */
+    /* Sezione pagelle (ex drawings) */
     .grades {
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
     }
 
     .grades h2 {
@@ -130,7 +165,6 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 1.25rem;
-      margin-top: 1rem;
     }
 
     .drawing-card {
@@ -162,7 +196,7 @@
       margin-top: 0.25rem;
     }
 
-    /* SEZIONE PDF DISEGNI */
+    /* Sezione PDF disegni */
     .pdf-drawings {
       margin-top: 2rem;
       margin-bottom: 1.5rem;
@@ -241,10 +275,10 @@
     <header>
       <h1>La nostra adozione a distanza</h1>
 
-      <!-- AREA LOGO: sostituisci l'immagine o il testo come preferisci -->
-      <div class="logo-area">
-        <!-- Se hai un logo, metti il percorso qui -->
-        <img src="img/logo.png" alt="Logo dell'associazione o della famiglia" />
+      <!-- LOGO CENTRATO, GRANDE -->
+      <div class="logo-wrapper">
+        <!-- Sostituisci il valore di src con il percorso reale del logo -->
+        <img src="img/logo.png" alt="Logo dell'associazione o della famiglia" class="logo">
       </div>
 
       <p class="subtitle">Una piccola scelta che per loro significa un grande futuro.</p>
@@ -263,20 +297,27 @@
         fermare nel tempo l’emozione di questo incontro speciale.
       </p>
       <p>
-        Ogni foto, ogni pagella, ogni disegno che ci mandano è un piccolo ponte
+        Ogni foto, ogni pagella e ogni disegno che ci mandano è un piccolo ponte
         tra la loro vita e la nostra.
       </p>
     </section>
 
     <section class="children" aria-label="I bambini che sosteniamo">
       <!-- CARTA BAMBINO -->
-      <article class="card">
+      <article class="card card--boy">
         <h2>Il bambino</h2>
-        <small>Eric Sawadogo</small>
+
+        <!-- NOME + ETÀ CON TIPOGRAFIA ELEGANTE E CORNICE -->
+        <div class="child-name-badge child-name-badge--boy">
+          <!-- Sostituisci con il suo nome reale -->
+          <span class="child-name">Nome del bambino</span>
+          <!-- Sostituisci con la sua età reale -->
+          <span class="child-age">8 anni</span>
+        </div>
 
         <div class="photo-wrapper">
           <!-- Sostituisci il valore di src con il percorso reale della foto del bambino -->
-          <img src="img/Eric_Sawadogo.jpeg" alt="Foto del bambino che sosteniamo a distanza" />
+          <img src="img/bambino.jpg" alt="Foto del bambino che sosteniamo a distanza" />
         </div>
 
         <p>
@@ -284,22 +325,37 @@
           Grazie all’adozione a distanza potrà continuare a frequentare la scuola,
           avere il materiale scolastico di cui ha bisogno e partecipare alle attività del centro.
         </p>
+        <p>
+          Nei suoi messaggi ci ha raccontato dei suoi sogni e di quanto gli piaccia
+          disegnare: uno dei modi più belli che ha per farsi conoscere da noi.
+        </p>
       </article>
 
       <!-- CARTA BAMBINA -->
-      <article class="card">
+      <article class="card card--girl">
         <h2>La bambina</h2>
-        <small>Neimatou Ilboudo</small>
+
+        <!-- NOME + ETÀ CON TIPOGRAFIA ELEGANTE E CORNICE -->
+        <div class="child-name-badge child-name-badge--girl">
+          <!-- Sostituisci con il suo nome reale -->
+          <span class="child-name">Nome della bambina</span>
+          <!-- Sostituisci con la sua età reale -->
+          <span class="child-age">7 anni</span>
+        </div>
 
         <div class="photo-wrapper">
           <!-- Sostituisci il valore di src con il percorso reale della foto della bambina -->
-          <img src="img/Neimatou_Ilboudo.jpeg" alt="Foto della bambina che sosteniamo a distanza" />
+          <img src="img/bambina.jpg" alt="Foto della bambina che sosteniamo a distanza" />
         </div>
 
         <p>
           È una bambina dolce e determinata, con un grande sorriso e un mondo di colori
           nei suoi quaderni. Con il nostro aiuto potrà continuare a studiare,
           ricevere assistenza e crescere circondata da persone che si prendono cura di lei.
+        </p>
+        <p>
+          Nei suoi disegni ci manda spesso cuori, fiori e case: piccoli segni
+          di affetto che ci fanno sentire più vicini, nonostante la distanza.
         </p>
       </article>
     </section>
@@ -319,7 +375,7 @@
           <h3>Pagella del bambino</h3>
           <figure>
             <!-- Sostituisci il valore di src con il percorso reale della pagella del bambino -->
-            <img src="img/Pagella_Eric.jpeg" alt="Pagella scolastica del bambino" />
+            <img src="img/pagella-bambino.jpg" alt="Pagella scolastica del bambino" />
             <figcaption>
               I risultati ottenuti a scuola mostrano il suo impegno e la sua curiosità.
             </figcaption>
@@ -335,7 +391,7 @@
           <h3>Pagella della bambina</h3>
           <figure>
             <!-- Sostituisci il valore di src con il percorso reale della pagella della bambina -->
-            <img src="img/Pagella_Neimatou.jpeg" alt="Pagella scolastica della bambina" />
+            <img src="img/pagella-bambina.jpg" alt="Pagella scolastica della bambina" />
             <figcaption>
               Ogni voto è il risultato della sua tenacia e della voglia di crescere.
             </figcaption>
@@ -348,11 +404,12 @@
       </div>
     </section>
 
-    <!-- SEZIONE DISEGNI IN PDF -->
+    <!-- SEZIONE PDF DEI DISEGNI -->
     <section class="pdf-drawings" aria-label="Disegni in formato PDF">
       <h2>I disegni in formato PDF</h2>
       <p>
-        Oltre alle foto e alle pagelle, abbiamo ricevuto i loro disegni.
+        Oltre alle foto, abbiamo ricevuto i loro disegni in formato PDF.
+        Qui li raccogliamo per poterli aprire e riguardare tutte le volte che vogliamo.
       </p>
 
       <div class="pdf-list">
@@ -364,7 +421,7 @@
             e tutto ciò che lo rende felice.
           </p>
           <!-- Sostituisci href con il percorso reale del PDF -->
-          <a href="pdf/Disegno_Eric.pdf" target="_blank" rel="noopener">
+          <a href="pdf/disegni-bambino.pdf" target="_blank" rel="noopener">
             <span class="pdf-icon">📄</span>
             <span class="pdf-title">Apri il PDF dei disegni del bambino</span>
           </a>
@@ -378,7 +435,7 @@
             e la sua fantasia.
           </p>
           <!-- Sostituisci href con il percorso reale del PDF -->
-          <a href="pdf/Disegno_Neimatou.pdf" target="_blank" rel="noopener">
+          <a href="pdf/disegni-bambina.pdf" target="_blank" rel="noopener">
             <span class="pdf-icon">📄</span>
             <span class="pdf-title">Apri il PDF dei disegni della bambina</span>
           </a>
