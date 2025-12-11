@@ -4,10 +4,6 @@
   <meta charset="UTF-8" />
   <title>La nostra adozione a distanza</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- Font elegante per i nomi -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
-
   <style>
     :root {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -34,21 +30,23 @@
     }
 
     header h1 {
-      margin: 0 0 0.75rem;
-      font-size: 2rem;
+      margin: 0 0 0.5rem;
+      font-size: 2.2rem;
     }
 
-    .logo-wrapper {
-      margin: 0.5rem auto 1rem;
+    /* LOGO CENTRALE E GRANDE */
+    .logo-container {
+      margin: 1rem auto 1.5rem;
       display: flex;
       justify-content: center;
       align-items: center;
     }
 
-    .logo-wrapper img.logo {
-      max-width: 260px;   /* logo bello grande */
+    .logo-image {
+      max-width: 260px;
+      width: 60%;
       height: auto;
-      display: block;
+      border-radius: 1.2rem;
     }
 
     header p.subtitle {
@@ -82,49 +80,42 @@
       box-shadow: 0 8px 20px rgba(0,0,0,0.04);
     }
 
-    /* Colori diversi per le due card */
-    .card--boy {
-      background: #eaf3ff;   /* azzurrino molto chiaro */
+    /* COLORI DIVERSI PER LE CARD DEI BAMBINI */
+    .card-boy {
+      background: #e7f2ff;
     }
 
-    .card--girl {
-      background: #ffeef6;   /* rosato molto chiaro */
+    .card-girl {
+      background: #ffe9f0;
     }
 
     .card h2 {
       margin-top: 0;
-      margin-bottom: 0.35rem;
-      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
       text-transform: uppercase;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.06em;
       color: #555;
     }
 
-    /* Badge con nome + età */
-    .child-name-badge {
+    /* NOME + ETÀ, TIPOGRAFIA ELEGANTE CON CORNICE */
+    .child-name-box {
+      margin-bottom: 1rem;
+      padding: 0.7rem 0.9rem;
+      border-radius: 0.9rem;
+      border: 1px solid rgba(0,0,0,0.08);
+      background: rgba(255,255,255,0.8);
       display: inline-flex;
-      align-items: baseline;
-      gap: 0.55rem;
-      margin-bottom: 0.9rem;
-      padding: 0.45rem 1.1rem;
-      border-radius: 999px;
-      border: 1px solid rgba(0, 0, 0, 0.06);
-      background: rgba(255, 255, 255, 0.9);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
-    }
-
-    .child-name-badge--boy {
-      border-color: rgba(80, 120, 200, 0.35);
-    }
-
-    .child-name-badge--girl {
-      border-color: rgba(200, 80, 140, 0.35);
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.15rem;
     }
 
     .child-name {
-      font-family: "Playfair Display", "Times New Roman", serif;
-      font-size: 1.15rem;
+      font-family: "Georgia", "Times New Roman", serif;
+      font-size: 1.25rem;
       font-weight: 600;
+      letter-spacing: 0.02em;
     }
 
     .child-age {
@@ -151,11 +142,12 @@
       font-size: 0.95rem;
     }
 
-    /* Sezione pagelle (ex drawings) */
+    .drawings,
     .grades {
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
     }
 
+    .drawings h2,
     .grades h2 {
       font-size: 1.3rem;
       margin-bottom: 0.5rem;
@@ -165,6 +157,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 1.25rem;
+      margin-top: 1rem;
     }
 
     .drawing-card {
@@ -196,61 +189,10 @@
       margin-top: 0.25rem;
     }
 
-    /* Sezione PDF disegni */
-    .pdf-drawings {
-      margin-top: 2rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .pdf-drawings h2 {
-      font-size: 1.3rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .pdf-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.25rem;
-      margin-top: 1rem;
-    }
-
-    .pdf-item {
-      background: #ffffff;
-      border-radius: 1.2rem;
-      padding: 1rem 1.2rem 1.2rem;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.04);
-    }
-
-    .pdf-item h3 {
-      margin-top: 0;
-      margin-bottom: 0.5rem;
-      font-size: 1rem;
-    }
-
-    .pdf-note {
-      font-size: 0.9rem;
-      color: #555;
-      margin-bottom: 0.8rem;
-    }
-
-    .pdf-item a {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      text-decoration: none;
-      font-size: 0.9rem;
-    }
-
-    .pdf-item a:hover {
-      text-decoration: underline;
-    }
-
-    .pdf-icon {
-      font-size: 1.4rem;
-    }
-
-    .pdf-title {
-      font-weight: 500;
+    .grades-intro,
+    .drawings-intro {
+      font-size: 0.95rem;
+      color: #444;
     }
 
     footer {
@@ -262,7 +204,7 @@
 
     @media (min-width: 768px) {
       header h1 {
-        font-size: 2.3rem;
+        font-size: 2.4rem;
       }
       .intro {
         font-size: 1rem;
@@ -275,10 +217,10 @@
     <header>
       <h1>La nostra adozione a distanza</h1>
 
-      <!-- LOGO CENTRATO, GRANDE -->
-      <div class="logo-wrapper">
-        <!-- Sostituisci il valore di src con il percorso reale del logo -->
-        <img src="img/logo.png" alt="Logo dell'associazione o della famiglia" class="logo">
+      <!-- LOGO CENTRALE E GRANDE -->
+      <div class="logo-container">
+        <!-- Sostituisci src con il percorso reale del tuo logo -->
+        <img src="img/logo.png" alt="Logo dell'adozione a distanza" class="logo-image" />
       </div>
 
       <p class="subtitle">Una piccola scelta che per loro significa un grande futuro.</p>
@@ -297,27 +239,27 @@
         fermare nel tempo l’emozione di questo incontro speciale.
       </p>
       <p>
-        Ogni foto, ogni pagella e ogni disegno che ci mandano è un piccolo ponte
-        tra la loro vita e la nostra.
+        Ogni foto, ogni disegno che ci mandano è un piccolo ponte tra la loro vita e la nostra.
       </p>
     </section>
 
+    <!-- SEZIONE BAMBINI -->
     <section class="children" aria-label="I bambini che sosteniamo">
       <!-- CARTA BAMBINO -->
-      <article class="card card--boy">
+      <article class="card card-boy">
         <h2>Il bambino</h2>
 
-        <!-- NOME + ETÀ CON TIPOGRAFIA ELEGANTE E CORNICE -->
-        <div class="child-name-badge child-name-badge--boy">
-          <!-- Sostituisci con il suo nome reale -->
-          <span class="child-name">Nome del bambino</span>
-          <!-- Sostituisci con la sua età reale -->
-          <span class="child-age">8 anni</span>
+        <!-- NOME + ETÀ -->
+        <div class="child-name-box">
+          <!-- Modifica con il suo nome reale -->
+          <div class="child-name">Eric Sawadogo</div>
+          <!-- Modifica con l’età reale -->
+          <div class="child-age">7 anni</div>
         </div>
 
         <div class="photo-wrapper">
           <!-- Sostituisci il valore di src con il percorso reale della foto del bambino -->
-          <img src="img/bambino.jpg" alt="Foto del bambino che sosteniamo a distanza" />
+          <img src="img/Eric_Sawadogo.jpeg" alt="Foto del bambino che sosteniamo a distanza" />
         </div>
 
         <p>
@@ -326,26 +268,26 @@
           avere il materiale scolastico di cui ha bisogno e partecipare alle attività del centro.
         </p>
         <p>
-          Nei suoi messaggi ci ha raccontato dei suoi sogni e di quanto gli piaccia
-          disegnare: uno dei modi più belli che ha per farsi conoscere da noi.
+          Nei suoi primi messaggi ci ha raccontato dei suoi desider e delle sue passioni, soprattutto di quanto gli piaccia
+          giocare a calcio: speriamo di poterlo aiutare anche in questo suo sogno!
         </p>
       </article>
 
       <!-- CARTA BAMBINA -->
-      <article class="card card--girl">
+      <article class="card card-girl">
         <h2>La bambina</h2>
 
-        <!-- NOME + ETÀ CON TIPOGRAFIA ELEGANTE E CORNICE -->
-        <div class="child-name-badge child-name-badge--girl">
-          <!-- Sostituisci con il suo nome reale -->
-          <span class="child-name">Nome della bambina</span>
-          <!-- Sostituisci con la sua età reale -->
-          <span class="child-age">7 anni</span>
+        <!-- NOME + ETÀ -->
+        <div class="child-name-box">
+          <!-- Modifica con il suo nome reale -->
+          <div class="child-name">Neimatou Ilboudo</div>
+          <!-- Modifica con l’età reale -->
+          <div class="child-age">6 anni</div>
         </div>
 
         <div class="photo-wrapper">
           <!-- Sostituisci il valore di src con il percorso reale della foto della bambina -->
-          <img src="img/bambina.jpg" alt="Foto della bambina che sosteniamo a distanza" />
+          <img src="img/Neimatou_Ilboudo.jpeg" alt="Foto della bambina che sosteniamo a distanza" />
         </div>
 
         <p>
@@ -354,8 +296,8 @@
           ricevere assistenza e crescere circondata da persone che si prendono cura di lei.
         </p>
         <p>
-          Nei suoi disegni ci manda spesso cuori, fiori e case: piccoli segni
-          di affetto che ci fanno sentire più vicini, nonostante la distanza.
+          Manifesta spesso il desiderio di viaggiare e di venire in Italia a incontrarci.
+          La stessa voglia di vederla pervade anche noi. Non vediamo l'ora di abbracciarla!
         </p>
       </article>
     </section>
@@ -363,19 +305,19 @@
     <!-- SEZIONE PAGELLE SCOLASTICHE -->
     <section class="grades" aria-label="Le loro pagelle scolastiche">
       <h2>Le loro pagelle scolastiche</h2>
-      <p>
+      <p class="grades-intro">
         Una delle gioie più grandi dell’adozione a distanza è vedere i loro progressi
-        a scuola: ogni voto rappresenta un passo in più verso un futuro migliore.
-        Qui raccogliamo le loro pagelle, che ci riempiono di orgoglio.
+        a scuola: ogni risultato rappresenta un passo in più verso un futuro migliore.
+        Qui raccogliamo alcune pagine delle loro pagelle, che ci riempiono di orgoglio.
       </p>
 
       <div class="drawing-grid">
         <!-- PAGELLA BAMBINO -->
         <article class="drawing-card">
-          <h3>Pagella del bambino</h3>
+          <h3>Pagella di Eric</h3>
           <figure>
             <!-- Sostituisci il valore di src con il percorso reale della pagella del bambino -->
-            <img src="img/pagella-bambino.jpg" alt="Pagella scolastica del bambino" />
+            <img src="img/Pagella_Eric.jpeg" alt="Pagella scolastica del bambino" />
             <figcaption>
               I risultati ottenuti a scuola mostrano il suo impegno e la sua curiosità.
             </figcaption>
@@ -388,10 +330,10 @@
 
         <!-- PAGELLA BAMBINA -->
         <article class="drawing-card">
-          <h3>Pagella della bambina</h3>
+          <h3>Pagella di Neimatou</h3>
           <figure>
             <!-- Sostituisci il valore di src con il percorso reale della pagella della bambina -->
-            <img src="img/pagella-bambina.jpg" alt="Pagella scolastica della bambina" />
+            <img src="img/Pagella_Neimatou.jpeg" alt="Pagella scolastica della bambina" />
             <figcaption>
               Ogni voto è il risultato della sua tenacia e della voglia di crescere.
             </figcaption>
@@ -404,41 +346,74 @@
       </div>
     </section>
 
-    <!-- SEZIONE PDF DEI DISEGNI -->
-    <section class="pdf-drawings" aria-label="Disegni in formato PDF">
-      <h2>I disegni in formato PDF</h2>
-      <p>
-        Oltre alle foto, abbiamo ricevuto i loro disegni in formato PDF.
-        Qui li raccogliamo per poterli aprire e riguardare tutte le volte che vogliamo.
+    <!-- SEZIONE DISEGNI IN JPEG -->
+    <section class="drawings" aria-label="I loro disegni">
+      <h2>I disegni che ci hanno mandato</h2>
+      <p class="drawings-intro">
+        Oltre alle pagelle, in questo primo periodo abbiamo ricevuto i loro disegni e le loro lettere: piccoli capolavori che
+        parlano della loro quotidianità, dei sogni e delle cose che amano. Qui ne
+        raccogliamo alcuni.
       </p>
 
-      <div class="pdf-list">
-        <!-- PDF DISEGNI BAMBINO -->
-        <article class="pdf-item">
-          <h3>Disegni del bambino (PDF)</h3>
-          <p class="pdf-note">
-            Una raccolta dei suoi disegni: scene di vita quotidiana, giochi con gli amici
-            e tutto ciò che lo rende felice.
+      <div class="drawing-grid">
+        <!-- DISEGNI BAMBINO -->
+        <article class="drawing-card">
+          <h3>Corrispondenza di Eric</h3>
+          <figure>
+            <!-- Sostituisci con i file JPEG reali dei disegni del bambino -->
+            <img src="img/Disegno_Eric1.png" alt="Disegno del bambino" />
+            <figcaption>
+              Eric si racconta.
+            </figcaption>
+          </figure>
+          <figure>
+            <!-- Sostituisci con i file JPEG reali dei disegni del bambino -->
+            <img src="img/Disegno_Eric2.png" alt="Disegno del bambino" />
+            <figcaption>
+              Un pallone: la sua più grande passione, uno strumento così semplice che fa appassionare tutti da generazioni.
+            </figcaption>
+          </figure>
+          <figure>
+            <!-- Sostituisci con i file JPEG reali dei disegni del bambino -->
+            <img src="img/Disegno_Eric3.png" alt="Disegno del bambino" />
+            <figcaption>
+              Passioni e desideri di Eric.
+            </figcaption>
+          </figure>
+          <p>
+            Nei suoi disegni spesso compaiono campi, palloni e amici: il suo modo
+            di raccontarci le giornate e ciò che lo rende felice.
           </p>
-          <!-- Sostituisci href con il percorso reale del PDF -->
-          <a href="pdf/disegni-bambino.pdf" target="_blank" rel="noopener">
-            <span class="pdf-icon">📄</span>
-            <span class="pdf-title">Apri il PDF dei disegni del bambino</span>
-          </a>
         </article>
 
-        <!-- PDF DISEGNI BAMBINA -->
-        <article class="pdf-item">
-          <h3>Disegni della bambina (PDF)</h3>
-          <p class="pdf-note">
-            Tanti colori, cuori e sogni per il futuro: i suoi disegni raccontano il suo mondo
-            e la sua fantasia.
+        <!-- DISEGNI BAMBINA -->
+        <article class="drawing-card">
+          <h3>Corrispondenza di Neimatou</h3>
+          <figure>
+            <!-- Sostituisci con i file JPEG reali dei disegni della bambina -->
+            <img src="img/Disegno_Neimatou1.png" alt="Disegno della bambina" />
+            <figcaption>
+              Neimatou si racconta
+            </figcaption>
+          </figure>
+          <figure>
+            <!-- Sostituisci con i file JPEG reali dei disegni della bambina -->
+            <img src="img/Disegno_Neimatou2.png" alt="Disegno della bambina" />
+            <figcaption>
+              Il gioco preferito di Neimatou
+            </figcaption>
+          </figure>
+          <figure>
+            <!-- Sostituisci con i file JPEG reali dei disegni della bambina -->
+            <img src="img/Disegno_Neimatou3.png" alt="Disegno della bambina" />
+            <figcaption>
+              Vita quotidiana e desideri di Neimatou
+            </figcaption>
+          </figure>
+          <p>
+            Nei suoi disegni ci manda spesso simboli di affetto e speranza: un modo
+            semplice ma profondissimo per dirci grazie e sentirsi più vicina a noi.
           </p>
-          <!-- Sostituisci href con il percorso reale del PDF -->
-          <a href="pdf/disegni-bambina.pdf" target="_blank" rel="noopener">
-            <span class="pdf-icon">📄</span>
-            <span class="pdf-title">Apri il PDF dei disegni della bambina</span>
-          </a>
         </article>
       </div>
     </section>
