@@ -210,6 +210,95 @@
         font-size: 1rem;
       }
     }
+
+    .drawings {
+  margin-top: 2rem;
+}
+
+.drawing-card-group {
+  margin-bottom: 2rem;
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 1.2rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+}
+
+.drawing-card-group h3 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #444;
+}
+
+.drawing-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.drawing-card {
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 0.8rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+}
+
+.drawing-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.9rem;
+}
+
+.drawing-card figcaption {
+  font-size: 0.85rem;
+  color: #777;
+  margin-top: 0.4rem;
+  text-align: center;
+}
+
+footer {
+  background: #f0f4f8;
+  padding: 2.5rem 1.5rem;
+  margin-top: 3rem;
+  border-top: 4px solid #d0dbe6;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.donation-phrase {
+  font-size: 1.25rem;
+  font-style: italic;
+  color: #333;
+  margin-bottom: 1.8rem;
+}
+
+.donation-box {
+  background: #ffffff;
+  padding: 1.5rem 1.8rem;
+  border-radius: 1.2rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
+  display: inline-block;
+  text-align: left;
+}
+
+.donation-box h3 {
+  margin-top: 0;
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 0.6rem;
+}
+
+.iban {
+  font-size: 1rem;
+  color: #222;
+  line-height: 1.5;
+}
+
+
   </style>
 </head>
 <body>
@@ -347,81 +436,86 @@
     </section>
 
     <!-- SEZIONE DISEGNI IN JPEG -->
-    <section class="drawings" aria-label="I loro disegni">
-      <h2>I disegni che ci hanno mandato</h2>
-      <p class="drawings-intro">
-        Oltre alle pagelle, in questo primo periodo abbiamo ricevuto i loro disegni e le loro lettere: piccoli capolavori che
-        parlano della loro quotidianità, dei sogni e delle cose che amano. Qui ne
-        raccogliamo alcuni.
-      </p>
+    <section class="drawings" aria-label="I loro disegni in formato JPEG">
+  <h2>Lettere e disegni dei nostri bimbi</h2>
+  <p>
+    Qui raccogliamo i loro disegni e le lettere che ci inviano per raccontarci la loro passioni e i loro desideri: uno dei modi più belli e spontanei con cui ci fanno conoscere il loro mondo,
+    le loro emozioni e ciò che li rende felici.
+  </p>
 
-      <div class="drawing-grid">
-        <!-- DISEGNI BAMBINO -->
-        <article class="drawing-card">
-          <h3>Corrispondenza di Eric</h3>
-          <figure>
-            <!-- Sostituisci con i file JPEG reali dei disegni del bambino -->
-            <img src="img/Disegno_Eric1.png" alt="Disegno del bambino" />
-            <figcaption>
-              Eric si racconta.
-            </figcaption>
-          </figure>
-          <figure>
-            <!-- Sostituisci con i file JPEG reali dei disegni del bambino -->
-            <img src="img/Disegno_Eric2.png" alt="Disegno del bambino" />
-            <figcaption>
-              Un pallone: la sua più grande passione, uno strumento così semplice che fa appassionare tutti da generazioni.
-            </figcaption>
-          </figure>
-          <figure>
-            <!-- Sostituisci con i file JPEG reali dei disegni del bambino -->
-            <img src="img/Disegno_Eric3.png" alt="Disegno del bambino" />
-            <figcaption>
-              Passioni e desideri di Eric.
-            </figcaption>
-          </figure>
-          <p>
-            Nei suoi disegni spesso compaiono campi, palloni e amici: il suo modo
-            di raccontarci le giornate e ciò che lo rende felice.
-          </p>
-        </article>
-
-        <!-- DISEGNI BAMBINA -->
-        <article class="drawing-card">
-          <h3>Corrispondenza di Neimatou</h3>
-          <figure>
-            <!-- Sostituisci con i file JPEG reali dei disegni della bambina -->
-            <img src="img/Disegno_Neimatou1.png" alt="Disegno della bambina" />
-            <figcaption>
-              Neimatou si racconta
-            </figcaption>
-          </figure>
-          <figure>
-            <!-- Sostituisci con i file JPEG reali dei disegni della bambina -->
-            <img src="img/Disegno_Neimatou2.png" alt="Disegno della bambina" />
-            <figcaption>
-              Il gioco preferito di Neimatou
-            </figcaption>
-          </figure>
-          <figure>
-            <!-- Sostituisci con i file JPEG reali dei disegni della bambina -->
-            <img src="img/Disegno_Neimatou3.png" alt="Disegno della bambina" />
-            <figcaption>
-              Vita quotidiana e desideri di Neimatou
-            </figcaption>
-          </figure>
-          <p>
-            Nei suoi disegni ci manda spesso simboli di affetto e speranza: un modo
-            semplice ma profondissimo per dirci grazie e sentirsi più vicina a noi.
-          </p>
-        </article>
+  <!-- DISEGNI DEL BAMBINO -->
+  <article class="drawing-card-group">
+    <h3>Disegni e lettere di Eric</h3>
+    <div class="drawing-grid-3">
+      
+      <div class="drawing-card">
+        <figure>
+          <img src="img/Disegno_Eric1.png" alt="Disegno 1 del bambino" />
+        </figure>
       </div>
-    </section>
+
+      <div class="drawing-card">
+        <figure>
+          <img src="img/Disegno_Eric2.png" alt="Disegno 2 del bambino" />
+        </figure>
+      </div>
+
+      <div class="drawing-card">
+        <figure>
+          <img src="img/Disegno_Eric3.png" alt="Disegno 3 del bambino" />
+        </figure>
+      </div>
+
+    </div>
+  </article>
+
+  <!-- DISEGNI DELLA BAMBINA -->
+  <article class="drawing-card-group">
+    <h3>Disegni e lettere di Neimatou</h3>
+    <div class="drawing-grid-3">
+
+      <div class="drawing-card">
+        <figure>
+          <img src="img/Disegno_Neimatou1.png" alt="Disegno 1 della bambina" />
+        </figure>
+      </div>
+
+      <div class="drawing-card">
+        <figure>
+          <img src="img/Disegno_Neimatou2.png" alt="Disegno 2 della bambina" />
+        </figure>
+      </div>
+
+      <div class="drawing-card">
+        <figure>
+          <img src="img/Disegno_Neimatou3.png" alt="Disegno 3 della bambina" />
+        </figure>
+      </div>
+
+    </div>
+  </article>
+
+</section>
+
 
     <footer>
-      Questa adozione a distanza è un impegno d’amore e responsabilità.  
-      Ci ricorda ogni giorno che, anche da lontano, è possibile fare la differenza.
-    </footer>
+  <div class="footer-content">
+    <p class="donation-phrase">
+      “Un piccolo gesto può cambiare un destino. Sostieni con noi il futuro di questi bambini.”
+    </p>
+
+    <div class="donation-box">
+      <h3>Coordinate per le donazioni</h3>
+      <p class="iban">
+        <!-- Inserisci qui l'IBAN dell'associazione -->
+        IBAN: <strong>IT19H0569652010000021110X92</strong><br>
+        Intestato a: <strong>PRO LOCO DI CLAINO CON OSTENO</strong>
+        Causale: <strong>ADOZIONE A DISTANZA</strong>
+      </p>
+    </div>
+  </div>
+</footer>
+
   </div>
 </body>
 </html>
